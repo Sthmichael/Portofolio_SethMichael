@@ -29,6 +29,134 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
 	
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ===== Timeline ===== */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #9c9b9bd3, #000000);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Points de la timeline */
+.timeline-dot {
+  position: absolute;
+  top: 25px;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border: 5px solid #6842088e;
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* Alternance gauche/droite */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.left .timeline-dot {
+  right: -13px;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -13px;
+}
+
+/* Contenu */
+.timeline-content {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(112, 22, 22, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.timeline-content h3 {
+  color: #000000c7;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.timeline-content .date {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content ul {
+  margin-left: 1rem;
+  list-style: disc;
+}
+
+
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    text-align: left;
+  }
+
+  .timeline-item.left, .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-dot {
+    left: 10px;
+  }
+}
 
 .ftco-counter .counter-wrap {
   margin-bottom: 10px;
@@ -62,14 +190,14 @@
 .ftco-counter .text h2 {
   font-size: 36px;
   font-weight: bold;
-  color: #2d3436;
+  color: #000000;
   text-transform: uppercase; /* Majuscules */
 }
 
 .ftco-counter .text .number {
   font-size: 20px;
   font-weight: bold;
-  color: #4f666d;
+  color: #000000;
   text-transform: uppercase; /* Majuscules */
 }
 
@@ -90,6 +218,17 @@
 .counter-wrap.visible .ftco-animate {
   opacity: 1;
 }
+ .card {
+	margin-left: 150px;
+    width: 1000px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 30px 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
 
 </style>
 	<!-- Animate.css -->
@@ -222,7 +361,7 @@
 					  <div class="text">
 						<h2><b><strong><span class="plus-sign">+</span></strong></b></h2>
 
-						<strong class="number" data-number="6">0</strong>
+						<strong class="number" data-number="10">0</strong>
 						<span>Projets freelances internationaux</span>
 					  </div>
 					</div>
@@ -246,7 +385,25 @@
 			  </div>
 			</section>
 		  </div>
-		  
+		  <br><br>
+  <div class="card">
+   <p>
+    <h3> Bref ,</h3> Au cours de mon parcours, j’ai accumulé <span class="highlight">deux ans et demi d’expérience</span> en tant que développeur PHP. 
+      J’ai participé à divers projets, aussi bien en freelance qu’en entreprise, notamment dans la création de plateformes e-commerce, 
+      de systèmes de gestion des ressources humaines et d’outils analytiques.
+    </p>
+    <p>
+      Ces expériences m’ont permis de développer une solide maîtrise du développement back-end et front-end, ainsi que de la gestion 
+      de bases de données SQL et NoSQL. Par ailleurs, je possède une expérience complémentaire en <span class="highlight">analyse de données (Data Analyst)</span> 
+      et de bonnes connaissances en réseaux, ce qui renforce ma vision globale des systèmes informatiques.
+    </p>
+    <p>
+      Curieux et polyvalent, je m’adapte rapidement à de nouveaux environnements techniques et suis motivé pour relever des défis complexes. 
+      Mon sens de l’analyse, ma rigueur et ma capacité à résoudre des problèmes me permettent de contribuer efficacement aux projets auxquels je participe.
+    </p>
+   
+  </div>
+	
 		<div id="colorlib-services">
 			<div class="container">
 				<div class="row text-center">
@@ -262,55 +419,65 @@
 										<h2>Voici quelques-unes de mes compétences</h2>
 									</div>
 								</div>
-								<div class="col-md-12">
-										<div class="rotate">
-											<h2 class="heading">Services</h2>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="services animate-box">
-											<h3> <a href="">1 - Design Graphique</a></h3>
-											<ul>
-												<li>Design UI</li>
-												<li>Design Web &amp; Digital</li>
-												<li>Canva &amp; Figma</li>
-												<li> . . .</li>
-											</ul>
-										</div>
-										<div class="services animate-box">
-											<h3><a href="">3 - Développement Front-End</a></h3>
-											<ul>
-												<li>HTML / CSS</li>
-												<li>React JS </li>
-												<li>bootstrap </li>
-												<li> . . .</li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="services animate-box">
-											<h3><a href="">3 - Développement Back-End</a></h3>
-											<ul>
-												<li>PHP</li>
-												<li>javaScript </li>
-												<li>Python </li>
-												<li>. . .</li>
-											</ul>
-										</div>
-										<div class="services animate-box">
-											<h3><a href="">4 - Marketing Digital &amp; Gestion de Projet</a></h3>
-											<ul>
-												<li>Gestion de Projet avec Trello</li>
-												<li>Analyse de Données avec Power BI</li>
-												<li>Réseaux Sociaux (SNS)</li>
-												<li> . . . </li>
-											</ul>
-										</div>
-									</div>
+								</div>
+								</div>
+								</div>
+								<br><br><br><br><br><br><br><br>
 									
+    <section class="timeline">
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Développeur Full-Stack Freelance (Télétravail)</h3>
+          <p class="date">Missions pour une société française</p>
+         Conception et développement de divers projets pour différents clients : site e-commerce, plateforme de streaming et solution de gestion GED, réalisés en autonomie dans le cadre de missions freelance.
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Développeur Full-Stack – Voxens Madagascar</h3>
+          <p class="date">Octobre 2024 – Juillet 2025 (Temps plein)</p>
+          <p>Spécialisation front-end, back-end, conception de bases de données et intégration d’interfaces performantes.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Développeur Data et Reporting – Voxens Madagascar</h3>
+          <p class="date">Février 2024 – Octobre 2024 (Temps plein)</p>
+          <p>Analyse et optimisation de données, création de rapports et de tableaux de bord.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Stagiaire Full-Stack & Réseaux – Voxens Madagascar</h3>
+          <p class="date">Juin 2023 – Décembre 2023 (Alternance)</p>
+          <ul>
+            <li>Création d’une plateforme de gestion de pointage.</li>
+            <li>Maîtrise des concepts réseaux : protocoles, topologies, gestion du trafic.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Développeur (Projets Scolaires) – IT University</h3>
+          <p>Réalisation de plateformes web : gestion immobilière, Takalo Takalo, etc. Déploiement sur <strong>Heroku</strong>, <strong>Vercel</strong>, <strong>Netlify</strong> et <strong>Railway</strong>.</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
 								
 							</div>
-							<div class="one-forth services-img" style="background-image: url(images/6.jpg);">
 							</div>
 						</div>
 					</div>
@@ -349,10 +516,9 @@
 										</div>
 									</a>
 									<div class="desc">
-										<span class="meta">20, Septembre 2023</span>
-										<h2><a href="#">GEDWORKING SAS</a></h2>
+										<h2><a href="#">GEDWORKING SAS(FullStack)</a></h2>
 										<p>La création d'un logiciel de gestion électronique des documents (GED) consiste à développer une plateforme permettant de centraliser, organiser, et sécuriser les documents numériques pour une gestion efficace.</p>
-										<p> <a href="">php / Mysql / Trello / Figma / Power BI / Excel</a></p>
+										<p> <a href="">php / Mysql / HTML , CSS / Trello / Figma / Power BI / Excel</a></p>
 									
 									</div>
 								</div>
@@ -369,10 +535,9 @@
 										</div>
 									</a>
 									<div class="desc">
-										<span class="meta">16 , Avril 2024</span>
-										<h2><a href="#">MADASTREAM </a></h2>
+										<h2><a href="#">MADASTREAM (FullStack)</a></h2>
 										<p>Un site de visionnage de films permet aux utilisateurs de regarder des films en streaming , tandis que des plateformes administratives permettent aux gestionnaires de contrôler l'ajout de contenu, la gestion des utilisateurs .</p>
-										<p> <a href=""> php(CodeIgniters 3 ) / Postgres / PayFit / Power BI </a></p>
+										<p> <a href=""> CodeIgniters 3 / HTML , CSS / Postgres / PayFit / Power BI </a></p>
 									
 									</div>
 								</div>
@@ -389,8 +554,7 @@
 										</div>
 									</a>
 									<div class="desc">
-										<span class="meta">20, Mai 2024</span>
-										<h2><a href="#">Gestion des Taches</a></h2>
+										<h2><a href="#">Gestion des Taches(Fullstack)</a></h2>
 										<p>Une interface de gestion des tâches permet d'attribuer, suivre les tâches, et gérer les temps de pause et les congés des employés. Elle facilite la gestion des horaires et de la productivité au sein de l'entreprise.</p>
 										<p> <a href=""> javaScript Node Js/ React JS / Office 365 / Mysql </a></p>
 									
@@ -409,8 +573,7 @@
 										</div>
 									</a>
 									<div class="desc">
-										<span class="meta">20, Juin 2024</span>
-										<h2><a href="#">Gestion immobilière</a></h2>
+										<h2><a href="#">Gestion immobilière (back-end)</a></h2>
 										<p>La création d'une gestion immobilière implique la mise en place de processus pour administrer, louer, entretenir et optimiser les propriétés, tout en garantissant la rentabilité et le respect des réglementations.</p>
 										<p> <a href=""> Laravel 11 / Mysql  / Office 365  / Power BI </a></p>
 									
@@ -429,10 +592,98 @@
 										</div>
 									</a>
 									<div class="desc">
-										<span class="meta">10, Septembre 2024</span>
-										<h2><a href="#">Gestion RH </a></h2>
+										
+										<h2><a href="#">Gestion des CV (FullStack)</a></h2>
 										<p>L'automatisation de la soumission des CV en ligne permet aux candidats de télécharger leurs documents directement sur la plateforme, simplifiant ainsi le processus de recrutement en éliminant les tâches manuelles et en facilitant l'analyse rapide des profils</p>
-										<p> <a href=""> PHP / Mysql  / Office 365   </a></p>
+										<p> <a href=""> Symfony / Vue.js / Mysql  / Office 365   </a></p>
+									
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="col-md-12">
+								<div class="article">
+									<a href="#" class="blog-img">
+											<div style="
+    width:300px;
+    height:200px;
+    background-color:#f0f0f0;
+    border:2px dashed #ccc;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:transform 0.3s ease;
+  "
+  onmouseover="this.style.transform='scale(1.03)'"
+  onmouseout="this.style.transform='scale(1)'">
+
+    <!-- L’image -->
+    <img 
+      src="image-introuvable.jpg" 
+      alt="Image " 
+      style="width:100%; height:100%; object-fit:cover;"
+      onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'text-align:center; color:#777; font-size:1rem; font-weight:500;\'><div style=\'font-size:2rem; opacity:0.5;\'>🖼️</div>Image not found</div>';"
+    >
+
+  </div><div class="overlay"></div><div class="overlay"></div>
+										<div class="link">
+											
+										</div>
+									</a>
+									<div class="desc">
+										
+										<h2><a href="#">Gestion des employés(FullStack)</a></h2>
+										<p>Conception et développement d’une plateforme de gestion RH complète, du suivi des employés et des présences jusqu’au calcul et à l’émission des paies</p>
+										<p> <a href=""> Symfony / Vue.js / Mysql  / Office 365   </a></p>
+									
+									</div>
+								</div>
+							</div>
+						</div>
+							<div class="item">
+							<div class="col-md-12">
+								<div class="article">
+									<a href="#" class="blog-img">
+										<div style="
+    width:300px;
+    height:200px;
+    background-color:#f0f0f0;
+    border:2px dashed #ccc;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:transform 0.3s ease;
+  "
+  onmouseover="this.style.transform='scale(1.03)'"
+  onmouseout="this.style.transform='scale(1)'">
+
+    <!-- L’image -->
+    <img 
+      src="image-introuvable.jpg" 
+      alt="Image " 
+      style="width:100%; height:100%; object-fit:cover;"
+      onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'text-align:center; color:#777; font-size:1rem; font-weight:500;\'><div style=\'font-size:2rem; opacity:0.5;\'>🖼️</div>Image not found</div>';"
+    >
+
+  </div><div class="overlay"></div>
+										<div class="link">
+											
+										</div>
+									</a>
+									<div class="desc">
+										
+										<h2><a href="#">Creation Site E_commerce (FullStack)</a></h2>
+										<p>Développement d’un site e-commerce complet offrant la possibilité de vendre, acheter et échanger des produits entre utilisateurs.</p>
+										<p> <a href=""> Python / PostgreSQL / Twailand CSS /Office 365   </a></p>
 									
 									</div>
 								</div>
@@ -443,7 +694,7 @@
 			</div>
 		</div>
 <br><br><br>
-	<center>© 2025 Seth Michael. All rights reserved.</center>
+<center>© 2025 Seth Michael. All rights reserved.</center>
 	<br><br>
 	</div>
 
@@ -500,6 +751,20 @@
 		  window.addEventListener('scroll', checkVisibility);
 		  checkVisibility(); // Exécute la fonction au cas où les compteurs sont déjà visibles au chargement
 		});
+		// Effet d’apparition au scroll
+    const items = document.querySelectorAll(".timeline-item");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    items.forEach(item => {
+      observer.observe(item);
+    });
 	  </script>
 	  
 	</body>
