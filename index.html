@@ -219,16 +219,130 @@ header p {
   opacity: 1;
 }
  .card {
-	margin-left: 150px;
-    width: 1000px;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      padding: 30px 40px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
-    }
+  max-width: 1000px;
+  width: 90%;
+  margin: 20px auto; /* centré horizontalement */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  
+  /* Animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Texte */
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive pour tablette */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px 25px;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* 📱 Responsive pour mobile */
+@media (max-width: 480px) {
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+.skills-section {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.skills-section h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.skills-category {
+  margin-bottom: 25px;
+}
+
+.skills-category h4 {
+  margin-bottom: 10px;
+  color: #585858;
+}
+
+.skills-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+ 
+}
+
+.skill-card {
+  background: #f0f0f0;
+  padding: 8px 15px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 500px;
+  transition: all 0.3s ease;
+  cursor: default;
+  font-size: bold;
+  color: #000000;
+}
+
+.skill-card:hover {
+  background: #717477;
+  color: #fff;
+  
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skill-card {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-card {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
 
 </style>
 	<!-- Animate.css -->
@@ -388,41 +502,32 @@ header p {
 		  <br><br>
   <div class="card">
    <p>
-    <h3> Bref ,</h3> Au cours de mon parcours, j’ai accumulé <span class="highlight">deux ans et demi d’expérience</span> en tant que développeur PHP. 
+    <h1> Bref ,</h1> Au cours de mon parcours, j’ai accumulé <span class="highlight">deux ans et demi d’expérience</span> en tant que développeur FullStack. 
       J’ai participé à divers projets, aussi bien en freelance qu’en entreprise, notamment dans la création de plateformes e-commerce, 
       de systèmes de gestion des ressources humaines et d’outils analytiques.
-    </p>
-    <p>
+<br><br>
       Ces expériences m’ont permis de développer une solide maîtrise du développement back-end et front-end, ainsi que de la gestion 
       de bases de données SQL et NoSQL. Par ailleurs, je possède une expérience complémentaire en <span class="highlight">analyse de données (Data Analyst)</span> 
       et de bonnes connaissances en réseaux, ce qui renforce ma vision globale des systèmes informatiques.
-    </p>
-    <p>
+    <br><br>
       Curieux et polyvalent, je m’adapte rapidement à de nouveaux environnements techniques et suis motivé pour relever des défis complexes. 
       Mon sens de l’analyse, ma rigueur et ma capacité à résoudre des problèmes me permettent de contribuer efficacement aux projets auxquels je participe.
-    </p>
+    
    
   </div>
 	
 		<div id="colorlib-services">
 			<div class="container">
 				<div class="row text-center">
-					<h2 class="bold">Services</h2>
+					<h2 class="bold">Experiences Profesionnelle</h2>
 				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="services-flex">
-							<div class="one-third">
-								<div class="row">
-									<div class="col-md-12 col-md-offset-0 animate-box intro-heading">
-										<span>Mes services</span>
-										<h2>Voici quelques-unes de mes compétences</h2>
-									</div>
-								</div>
-								</div>
-								</div>
-								</div>
-								<br><br><br><br><br><br><br><br>
+				<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
+						<span>Mes projets</span>
+						<h2>Découvrez mes Experiences Profesionnelle </h2>
+					</div></div>
+								
+								
+								
 									
     <section class="timeline">
 
@@ -691,9 +796,103 @@ header p {
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-<br><br><br>
+		
+
+<div id="colorlib-blog">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">Compétences</h2>
+				</div>
+<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
+						<span>Mes projets</span>
+						<h2>Découvrez mes Compétences Techniques </h2>
+					</div>
+  <p>Spécialisé dans les langages de programmation, aussi bien en back-end qu’en front-end, je possède également de solides notions en réseaux et j’ai suivi une formation en data analysis afin d’approfondir ma maîtrise des bases de données.</p>
+
+  <!-- Back-end -->
+  <div class="skills-category">
+    <h4>Back-end</h4>
+    <div class="skills-cards">
+      <span class="skill-card">PHP (+3 ans)</span>
+      <span class="skill-card">JavaScript (3 ans)</span>
+      <span class="skill-card">Python (+4 ans)</span>
+      <span class="skill-card">C# (3 ans)</span>
+    </div>
+  </div>
+
+  <!-- Front-end -->
+  <div class="skills-category">
+    <h4>Front-end</h4>
+    <div class="skills-cards">
+      <span class="skill-card">React JS (+3 ans)</span>
+      <span class="skill-card">HTML / CSS (4 ans)</span>
+      <span class="skill-card">Angular (2 ans)</span>
+      <span class="skill-card">Tailwind CSS (2 ans)</span>
+    </div>
+  </div>
+
+  <!-- Base de données -->
+  <div class="skills-category">
+    <h4>Base de données</h4>
+    <div class="skills-cards">
+      <span class="skill-card">MySQL (+4 ans)</span>
+      <span class="skill-card">PostgreSQL (4 ans)</span>
+      <span class="skill-card">NoSQL (2 ans)</span>
+      <span class="skill-card">Oracle (2 ans)</span>
+    </div>
+  </div>
+
+  <!-- Outils Data Analyst -->
+  <div class="skills-category">
+    <h4>Data Analyst</h4>
+    <div class="skills-cards">
+      <span class="skill-card">Power BI (2 ans)</span>
+      <span class="skill-card">Excel (3 ans)</span>
+      <span class="skill-card">SQL (4 ans)</span>
+      <span class="skill-card">Tableau (1 an)</span>
+      <span class="skill-card">Python (Data Analysis) (4 ans)</span>
+    </div>
+  </div>
+
+  <!-- Framework MVC -->
+  <div class="skills-category">
+    <h4>Framework MVC</h4>
+    <div class="skills-cards">
+      <span class="skill-card">CodeIgniter (4 ans)</span>
+      <span class="skill-card">Laravel (2 ans)</span>
+      <span class="skill-card">Symfony (2 ans)</span>
+      <span class="skill-card">Django (2 ans)</span>
+      <span class="skill-card">Spring MVC (2 ans)</span>
+      <span class="skill-card">Express.js (2 ans)</span>
+    </div>
+  </div>
+
+  <!-- Testeur QA -->
+  <div class="skills-category">
+    <h4>Testeur QA</h4>
+    <div class="skills-cards">
+      <span class="skill-card">Tests fonctionnels</span>
+      <span class="skill-card">Tests unitaires</span>
+      <span class="skill-card">Tests automatisés</span>
+      <span class="skill-card">Selenium</span>
+      <span class="skill-card">JIRA</span>
+      <span class="skill-card">Postman</span>
+    </div>
+  </div>
+
+  <!-- Autres outils -->
+  <div class="skills-category">
+    <h4>Autres outils</h4>
+    <div class="skills-cards">
+      <span class="skill-card">Figma (4 ans)</span>
+      <span class="skill-card">Trello (2 ans)</span>
+      <span class="skill-card">Git (2 ans)</span>
+      <span class="skill-card">Photoshop (2 ans)</span>
+    </div>
+  </div>
+
+</div>
+
 <center>© 2025 Seth Michael. All rights reserved.</center>
 	<br><br>
 	</div>
